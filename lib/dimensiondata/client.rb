@@ -18,7 +18,7 @@ module Dimensiondata
 
 
 
-    def initialize(api_base, org_id, username, password, default_password="verysecurepassword", datacenter="EU1", colors = true, silent = false)
+    def initialize(api_base, username, password, default_password="verysecurepassword", datacenter="NA1")
       @api_base = api_base
       @org_id       = org_id
       @username     = username
@@ -26,40 +26,37 @@ module Dimensiondata
       @datacenter   = datacenter
       @default_password     = default_password
 
-      @colors = colors
-      @silent = silent
-
-      if @colors
-        require 'colorize'
+      if @org_id.nil?
+        @org_id = getaccount.orgId
       end
     end
 
     def directory
-      Opsource::API::Directory.new(self)
+      Dimensiondata::API::Directory.new(self)
     end
 
     def image
-      Opsource::API::Image.new(self)
+      Dimensiondata::API::Image.new(self)
     end
 
     def network
-      Opsource::API::Network.new(self)
+      Dimensiondata::API::Network.new(self)
     end
 
     def server
-      Opsource::API::Server.new(self)
+      Dimensiondata::API::Server.new(self)
     end
 
     def account
-      Opsource::API::Account.new(self)
+      Dimensiondata::API::Account.new(self)
     end
 
     def report
-      Opsource::API::Report.new(self)
+      Dimensiondata::API::Report.new(self)
     end
 
     def vip
-      Opsource::API::VIP.new(self)
+      Dimensiondata::API::VIP.new(self)
     end
 
     def filter_params
