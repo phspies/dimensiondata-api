@@ -1,0 +1,10 @@
+/schemas/datacenter
+/schemas/directory
+/schemas/general
+/schemas/multigeo
+/schemas/network
+/schemas/organization
+/schemas/server
+/schemas/storage
+/schemas/vip
+/schemas/vips
