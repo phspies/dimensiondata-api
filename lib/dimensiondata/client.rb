@@ -26,9 +26,9 @@ module Dimensiondata
       @datacenter   = datacenter
       @default_password     = default_password
 
-      # if @org_id.nil?
-      #   @org_id = self.account.myaccount.orgId
-      # end
+      if @org_id.nil?
+        @org_id = self.account.myaccount.org_id
+      end
     end
 
     def directory
