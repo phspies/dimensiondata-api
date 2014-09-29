@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f21291b-470b-4ec0-89ed-74917a39bac0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/client.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/connection.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/connection.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/api/core.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/api/core.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/exceptions.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/exceptions.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/api/network.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/api/network.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/api/server.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/api/server.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/version.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/version.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dimensiondata/xml.rb" afterPath="$PROJECT_DIR$/lib/dimensiondata/xml.rb" />
-    </list>
+    <list default="true" id="4f21291b-470b-4ec0-89ed-74917a39bac0" name="Default" comment="" />
     <ignored path="dimensiondata-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
