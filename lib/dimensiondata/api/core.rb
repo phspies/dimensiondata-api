@@ -85,6 +85,8 @@ module Dimensiondata::API
           # unwind some arrays of elements
           result.values.count == 1 ? result.values.first : result
         end
+      elsif !response.success? and response.code == 400
+        result = @client.parse_response_xml_body(response.body)
       else
         {}
       end

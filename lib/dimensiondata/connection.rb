@@ -1,7 +1,6 @@
 module Dimensiondata
   module Connection
     def build_request(type, endpoint, query = nil, body = nil, xml=true)
-      # url = "https://cloudapi.nttamerica.com/oec/0.9" + "/server"
       uri = api_base + endpoint
       append_query(uri, query) if query
 
@@ -11,7 +10,7 @@ module Dimensiondata
           method: type,
           body: body,
           userpwd: "#{@username}:#{@password}",
-            headers: { 'Content-Type' =>'text/xml', 'User-Agent' => 'ACP Ruby SDK' }
+            headers: { 'Content-Type' =>'text/xml', 'User-Agent' => 'CaaS Ruby SDK' }
         )
       else
         request = Typhoeus::Request.new(
@@ -19,7 +18,7 @@ module Dimensiondata
           method: type,
           body: body,
           userpwd: "#{@username}:#{@password}",
-            headers: {  'User-Agent' => 'ACP Ruby SDK' }
+            headers: {  'User-Agent' => 'CaaS Ruby SDK' }
         )
       end
     end
@@ -35,7 +34,7 @@ module Dimensiondata
 
 
     def perform_request(request)
-      log "\nrequesting #{request.url}...", :yellow
+      log "\nrequesting #{request.url}...", :yellow if @debug
       request.run
     end
 

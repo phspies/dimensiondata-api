@@ -4,7 +4,8 @@ module Dimensiondata
       "REASON_10" => "Failure at network",
       "REASON_20" => "Unrecoverable failure cause by a timeout.",
       "REASON_250" => "Network does not exist for this organization.",
-      "REASON_320" => "Invalid Input Data - SourceIP must be a valid IPv4 address."
+      "REASON_320" => "Invalid Input Data - SourceIP must be a valid IPv4 address.",
+      "REASON_601" => "Operation in progress"
     }
 
     class ApiError < StandardError; end

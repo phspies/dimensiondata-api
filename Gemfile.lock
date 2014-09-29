@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dimensiondata (0.1.0)
+    dimensiondata (0.1.2)
       activesupport
       colorize
       hashie

@@ -24,14 +24,16 @@ module Dimensiondata
 
     def build_request_xml_body(schema, tag, params)
       params = camelize_keys(params)
-      schema_url = "http://oec.api.dimensiondata.net/schemas/#{schema}"
+      schema_url = "http://oec.api.opsource.net/schemas/#{schema}"
 
       xml = xml_header
       xml += "<#{tag} xmlns=\"#{schema_url}\">\n"
       params.each do |k, value|
+        if (!value.empty?)
+          xml += build_xml_helper(k, value)
+          xml += "\n"
+        end
 
-        xml += build_xml_helper(k, value)
-        xml += "\n"
       end
       xml += "</#{tag}>\n"
     end

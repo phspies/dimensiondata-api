@@ -6,7 +6,7 @@ module Dimensiondata
 
     attr_reader :api_base, :org_id, :username, :password
     attr_reader :image, :directory, :network, :server, :account, :report
-    attr_reader :datacenter, :default_password
+    attr_reader :datacenter, :debug
 
     ### FILTERS
     # client.page_size = 10
@@ -18,17 +18,14 @@ module Dimensiondata
 
 
 
-    def initialize(api_base, username, password, default_password="verysecurepassword", datacenter="NA1")
+    def initialize(api_base, username, password, datacenter="NA1", debug=false)
       @api_base = api_base
-      @org_id       = org_id
       @username     = username
       @password     = password
       @datacenter   = datacenter
-      @default_password     = default_password
+      @debug = debug
 
-      if @org_id.nil?
-        @org_id = self.account.myaccount.org_id
-      end
+      @org_id = self.account.myaccount.org_id if @org_id.nil?
     end
 
     def directory

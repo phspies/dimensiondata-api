@@ -5,9 +5,9 @@ module Dimensiondata::API
       get
     end
 
-    def create(name, description="", datacenter=@client.datacenter)
+    def create(name, datacenter, description="")
       org_endpoint "/networkWithLocation"
-      xml_params(schema: "network", tag: "NewNetworkWithLocation", name: name, description: description, location: datacenter)
+      xml_params(schema: "network", tag: "NewNetworkWithLocation", name: name, location: datacenter, description: description,)
       post
     end
 
