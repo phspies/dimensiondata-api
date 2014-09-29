@@ -25,7 +25,13 @@ module Dimensiondata::API
       get
     end
 
-    def list_deployed_with_disks(network_id, options = {})
+    def list_deployed_with_disks_in_location(datacenter, options = {})
+      org_endpoint "/serverWithBackup?location=#{localtionId}"
+      query_params options
+      get
+    end
+
+    def list_deployed_with_disks_in_network(network_id, options = {})
       org_endpoint "/network/#{network_id}/server/deployedWithDisks"
       query_params options
       get

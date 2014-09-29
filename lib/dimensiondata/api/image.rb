@@ -10,6 +10,14 @@ module Dimensiondata::API
       query_params options
       get
     end
+    def software_labels
+      org_endpoint "/softwarelabel"
+      get
+    end
+    def template_labels
+      org_endpoint "/imageWithDiskSpeed?&location=#{datacenter}"
+      get
+    end
 
     def show_by_name(name, options = {})
       options[:name] = name

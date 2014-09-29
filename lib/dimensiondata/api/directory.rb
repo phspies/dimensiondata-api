@@ -4,5 +4,6 @@ module Dimensiondata::API
       org_endpoint "/datacenterWithDiskSpeed"
       get
     end
+
   end
 end
