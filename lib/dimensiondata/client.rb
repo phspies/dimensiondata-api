@@ -27,7 +27,7 @@ module Dimensiondata
       @default_password     = default_password
 
       if @org_id.nil?
-        @org_id = getaccount.orgId
+        @org_id = myaccount.orgId
       end
     end
 
