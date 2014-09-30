@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Affinity < Core
     def list(options = {})
       org_endpoint "/antiAffinityRule"

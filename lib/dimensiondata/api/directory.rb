@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Directory < Core
     def data_center_list
       org_endpoint "/datacenterWithDiskSpeed"

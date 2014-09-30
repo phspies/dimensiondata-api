@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Image < Core
     def server_list
       endpoint '/base/image'

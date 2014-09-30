@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Backup < Core
     @serviceplans = ["Essentials", "Advanced", "Enterprise"]
     @alerttriggers = ["ON_FAILURE", "ON_SUCCESS", "ON_SUCCESS_OR_FAILURE", "ON_SUCCESS"]

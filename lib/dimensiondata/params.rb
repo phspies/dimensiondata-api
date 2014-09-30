@@ -1,4 +1,4 @@
-module Dimensiondata
+module DimensionData
   module Params
     def url_query(params)
       params = camelize_keys(params)

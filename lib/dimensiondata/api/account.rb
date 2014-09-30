@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Account < Core
     def myaccount()
       endpoint "/myaccount"

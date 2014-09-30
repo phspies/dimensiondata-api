@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Core
     attr_reader :client
     def initialize(client)

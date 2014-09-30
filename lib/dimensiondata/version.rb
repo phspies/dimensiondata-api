@@ -1,4 +1,4 @@
-module Dimensiondata
+module DimensionData
   VERSION = "0.1.3"
 
   {"xmlns:ns3"=>"http://oec.api.opsource.net/schemas/organization",

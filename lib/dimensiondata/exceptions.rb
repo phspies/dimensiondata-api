@@ -1,4 +1,4 @@
-module Dimensiondata
+module DimensionData
   module Exceptions
     CODES = {
       "REASON_10" => "Failure at network",

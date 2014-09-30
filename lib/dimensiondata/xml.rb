@@ -1,4 +1,4 @@
-module Dimensiondata
+module DimensionData
   module XML
     def xml_header
       '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' "\n"

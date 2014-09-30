@@ -1,8 +1,8 @@
-module Dimensiondata
+module DimensionData
   class Client
-    include Dimensiondata::Connection
-    include Dimensiondata::Params
-    include Dimensiondata::XML
+    include DimensionData::Connection
+    include DimensionData::Params
+    include DimensionData::XML
 
     attr_reader :api_base, :org_id, :username, :password
     attr_reader :image, :directory, :network, :server, :account, :report
@@ -29,31 +29,31 @@ module Dimensiondata
     end
 
     def directory
-      Dimensiondata::API::Directory.new(self)
+      DimensionData::API::Directory.new(self)
     end
 
     def image
-      Dimensiondata::API::Image.new(self)
+      DimensionData::API::Image.new(self)
     end
 
     def network
-      Dimensiondata::API::Network.new(self)
+      DimensionData::API::Network.new(self)
     end
 
     def server
-      Dimensiondata::API::Server.new(self)
+      DimensionData::API::Server.new(self)
     end
 
     def account
-      Dimensiondata::API::Account.new(self)
+      DimensionData::API::Account.new(self)
     end
 
     def report
-      Dimensiondata::API::Report.new(self)
+      DimensionData::API::Report.new(self)
     end
 
     def vip
-      Dimensiondata::API::VIP.new(self)
+      DimensionData::API::VIP.new(self)
     end
 
     def filter_params

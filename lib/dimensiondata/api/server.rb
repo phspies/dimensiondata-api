@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Server < Core
 
     # id

@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class Network < Core
     def list
       org_endpoint '/network'

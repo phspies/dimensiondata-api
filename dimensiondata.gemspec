@@ -4,7 +4,7 @@ require "dimensiondata/version"
 
 Gem::Specification.new do |s|
   s.name        = "dimensiondata"
-  s.version     = Dimensiondata::VERSION
+  s.version     = DimensionData::VERSION
   s.authors     = ["Phillip Spies"]
   s.email       = ["fspies0@hotmail.com"]
   s.homepage    = ""

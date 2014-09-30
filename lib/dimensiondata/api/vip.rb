@@ -1,4 +1,4 @@
-module Dimensiondata::API
+module DimensionData::API
   class VIP < Core
 
   # Real Server section

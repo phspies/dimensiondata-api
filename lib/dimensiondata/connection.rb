@@ -1,4 +1,4 @@
-module Dimensiondata
+module DimensionData
   module Connection
     def build_request(type, endpoint, query = nil, body = nil, xml=true)
       uri = api_base + endpoint
