@@ -26,7 +26,7 @@ module Dimensiondata::API
     end
 
     def list_deployed_with_disks_in_location(datacenter, options = {})
-      org_endpoint "/serverWithBackup?location=#{localtionId}"
+      org_endpoint "/serverWithBackup?location=#{datacenter}"
       query_params options
       get
     end
