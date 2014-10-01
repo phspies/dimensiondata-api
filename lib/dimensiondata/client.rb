@@ -19,6 +19,7 @@ module DimensionData
 
 
     def initialize(api_base, username, password, datacenter="NA1", debug=false)
+      Typhoeus::Config.verbose = false
       @api_base = api_base
       @username     = username
       @password     = password

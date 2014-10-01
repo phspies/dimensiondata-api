@@ -40,7 +40,6 @@ module DimensionData
 
     def log_response(request, response)
       if response.success?
-        log "...........success!", :yellow
       elsif response.timed_out?
         log "ERROR\n-----", :red
         log "got a time out"

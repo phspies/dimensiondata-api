@@ -29,7 +29,7 @@ module DimensionData
       xml = xml_header
       xml += "<#{tag} xmlns=\"#{schema_url}\">\n"
       params.each do |k, value|
-        if (!value.empty?)
+        if (!value.nil?)
           xml += build_xml_helper(k, value)
           xml += "\n"
         end
