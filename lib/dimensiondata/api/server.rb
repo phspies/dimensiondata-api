@@ -70,7 +70,6 @@ module DimensionData::API
       )
       post
     end
-
     def delete(server_id)
       org_endpoint "/server/#{server_id}?delete"
       get

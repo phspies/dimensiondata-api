@@ -21,7 +21,7 @@ require 'dimensiondata.rb'
 ### Usage
 
 ```
-c = Dimensiondata::Client.new("https://api-na.dimensiondata.com/oec/0.9", "adminuser", "secret")
+c = Dimensiondata::Client.new("https://api-na.dimensiondata.com", "adminuser", "secret")
 
 server = c.server.list(name: 'myfavoritevm')
 pp c.server.show_with_disks(server.network_id, server.id)
