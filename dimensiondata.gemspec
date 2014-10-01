@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
+$:.push File.expand_path('../lib', __FILE__)
 require "dimensiondata/version"
 
 Gem::Specification.new do |s|
-  s.name        = "dimensiondata"
+  s.name        = 'dimensiondata'
   s.version     = DimensionData::VERSION
-  s.authors     = ["Phillip Spies"]
-  s.email       = ["fspies0@hotmail.com"]
-  s.homepage    = ""
+  s.authors     = ['Phillip Spies']
+  s.email       = ['fspies0@hotmail.com']
+  s.homepage    = ''
   s.summary     = %q{Dimension Data Cloud API gem}
   s.description = %q{Wapper to access Dimension Data cloud's api'}
 
