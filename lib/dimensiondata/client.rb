@@ -18,13 +18,13 @@ module DimensionData
 
 
 
-    def initialize(api_base, username, password, datacenter="NA1", debug=false)
+    def initialize(api_base, username, password, datacenter="NA1", silent=true)
       Typhoeus::Config.verbose = false
       @api_base = api_base
       @username     = username
       @password     = password
       @datacenter   = datacenter
-      @debug = debug
+      @silent = silent
 
       @org_id = self.account.myaccount.org_id if @org_id.nil?
     end

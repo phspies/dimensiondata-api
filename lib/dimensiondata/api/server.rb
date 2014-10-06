@@ -57,16 +57,23 @@ module DimensionData::API
     end
 
     def create(name, description, network_id, image_id, image_password, started=false)
-      org_endpoint "/server"
+      org_endpoint "/deployServer"
       xml_params(
-        tag: "Server",
+        tag: "DeployServer",
         schema: "server",
         name: name,
         description: description,
-        vlan_resource_path: "/oec/#{org_id}/network/#{network_id}",
-        image_resource_path: "/oec/base/image/#{image_id}",
-        is_started: started,
-        administrator_password: image_password
+        imageId: image_id,
+        start: started,
+        administratorPassword: image_password,
+        networkId: network_id
+
+        # name: name,
+        # description: description,
+        # vlan_resource_path: "/oec/#{org_id}/network/#{network_id}",
+        # image_resource_path: "/oec/base/image/#{image_id}",
+        # is_started: started,
+        # administrator_password: image_password
       )
       post
     end

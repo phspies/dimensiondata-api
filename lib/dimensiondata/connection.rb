@@ -10,7 +10,8 @@ module DimensionData
           method: type,
           body: body,
           userpwd: "#{@username}:#{@password}",
-            headers: { 'Content-Type' =>'text/xml', 'User-Agent' => 'CaaS Ruby SDK' }
+          headers: { 'Content-Type' =>'text/xml', 'User-Agent' => 'CaaS Ruby SDK' },
+          ssl_verifypeer: false
         )
       else
         request = Typhoeus::Request.new(
@@ -18,7 +19,8 @@ module DimensionData
           method: type,
           body: body,
           userpwd: "#{@username}:#{@password}",
-            headers: {  'User-Agent' => 'CaaS Ruby SDK' }
+          headers: {  'User-Agent' => 'CaaS Ruby SDK' },
+          ssl_verifypeer: false
         )
       end
     end

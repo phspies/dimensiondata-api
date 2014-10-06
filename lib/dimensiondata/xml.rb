@@ -48,7 +48,6 @@ module DimensionData
             result += "#{value}"
         end
         result += "</#{key}>"
-        result
     end
 
   end
