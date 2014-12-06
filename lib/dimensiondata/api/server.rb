@@ -56,7 +56,29 @@ module DimensionData::API
       list_deployed_with_disks(network_id, options).find {|s| s.id == server_id}
     end
 
-    def create(name, description, network_id, image_id, image_password, started=false)
+    def create_with_ip(name, description, privateIp, image_id, image_password, started=false)
+      org_endpoint "/deployServer"
+      xml_params(
+          tag: "DeployServer",
+          schema: "server",
+          name: name,
+          description: description,
+          imageId: image_id,
+          start: started,
+          administratorPassword: image_password,
+          privateIp: privateIp
+
+      # name: name,
+      # description: description,
+      # vlan_resource_path: "/oec/#{org_id}/network/#{network_id}",
+      # image_resource_path: "/oec/base/image/#{image_id}",
+      # is_started: started,
+      # administrator_password: image_password
+      )
+      post
+    end
+
+    def create_with_network(name, description, network_id, image_id, image_password, started=false)
       org_endpoint "/deployServer"
       xml_params(
         tag: "DeployServer",
@@ -84,14 +106,14 @@ module DimensionData::API
 
     # memory in GB, we'll make sure it's in 1024's
     def modify(server_id, name = nil, description = nil, cpu_count = nil, memory = nil)
-      query_params(
+      simple_params(
         name: name,
         description: description,
-        cpu_count: cpu_count,
+        cpuCount: cpu_count,
         memory: (memory * 1024)
       )
       org_endpoint "/server/#{server_id}"
-      post
+      post_simple
     end
 
     def start(server_id)
@@ -130,7 +152,10 @@ module DimensionData::API
       org_endpoint "/server/#{server_id}/disk/#{disk_id}?delete"
       get
     end
-
+    def update_tools(server_id)
+      org_endpoint "/server/#{server_id}?updateVMwareTools"
+      get
+    end
   end
 end
 
