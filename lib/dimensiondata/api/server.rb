@@ -152,6 +152,24 @@ module DimensionData::API
       org_endpoint "/server/#{server_id}/disk/#{disk_id}?delete"
       get
     end
+    def expand_storage(server_id, disk_id, newsize)
+      org_endpoint "/server/#{server_id}/disk/#{disk_id}/changeSize"
+      xml_params(
+          tag: "ChangeDiskSize",
+          schema: "server",
+          newSizeGb: newsize
+      )
+      post
+    end
+    def change_storage_tier(server_id, disk_id, speed)
+      org_endpoint "/server/#{server_id}/disk/#{disk_id}/changeSpeed"
+      xml_params(
+          tag: "ChangeDiskSpeed",
+          schema: "server",
+          speed: speed
+      )
+      post
+    end
     def update_tools(server_id)
       org_endpoint "/server/#{server_id}?updateVMwareTools"
       get
