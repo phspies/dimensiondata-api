@@ -1,24 +1,5 @@
 module DimensionData::API
   class Server < Core
-
-    # id
-    # location
-    # networkId
-    # sourceImageId
-    # deployed boolean
-    # name -- Matched against names of servers
-    # created.MIN=20120901T00:00:00Z
-    # created.MAX=20120901T00:00:00Z
-    # state
-    #   "NORMAL",
-    #   "PENDING_ADD",
-    #   "PENDING_CHANGE",
-    #   "PENDING_DELETE",
-    #   "FAILED_ADD",
-    #   "FAILED_DELETE",
-    #   "PENDING_CLEAN" and
-    #   "REQUIRES_SUPPORT".
-    # order_by: started, operatingSystemId, state and all other
     def list(options = {})
       org_endpoint "/serverWithState"
       query_params options

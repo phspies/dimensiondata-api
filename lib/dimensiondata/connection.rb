@@ -1,9 +1,13 @@
 module DimensionData
   module Connection
-    def build_request(type, endpoint, query = nil, body = nil, xml=true)
-      uri = @api_base + "/oec/0.9" + endpoint
+    def build_request(type, endpoint, mcpversion, query = nil, body = nil, xml=true)
+      if mcpversion == 1
+        uri = @api_base + "/oec/0.9" + endpoint
+      else
+        uri = @api_base + "/caas/2.0" + endpoint
+      end
       append_query(uri, query) if query
-      if xml
+      if (xml)
         request = Typhoeus::Request.new(
           uri,
           method: type,
@@ -35,7 +39,7 @@ module DimensionData
 
 
     def perform_request(request)
-      log "\nrequesting #{request.url}...", :yellow if @debug
+      log "\nrequesting #{request.url}...", :yellow
       request.run
     end
 

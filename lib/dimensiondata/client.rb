@@ -7,6 +7,7 @@ module DimensionData
     attr_reader :api_base, :org_id, :username, :password
     attr_reader :image, :directory, :network, :server, :account, :report
     attr_reader :datacenter, :debug
+    attr_reader :mcpversion
 
     ### FILTERS
     # client.page_size = 10
@@ -18,7 +19,7 @@ module DimensionData
 
 
 
-    def initialize(api_base, username, password, datacenter="NA1", silent=true)
+    def initialize(api_base, username, password, datacenter="NA1", silent=false)
       Typhoeus::Config.verbose = false
       @api_base = api_base
       @username     = username

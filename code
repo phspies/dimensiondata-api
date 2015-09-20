@@ -1,0 +1,4 @@
+require 'dimensiondata'
+c = DimensionData::Client.new("https://api-na.dimensiondata.com", "p_spies", "Money12345!")
+c.directory.data_center_list
+c.directory.data_center_with_id("NA9")

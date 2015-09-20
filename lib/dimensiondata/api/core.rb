@@ -1,8 +1,10 @@
 module DimensionData::API
   class Core
-    attr_reader :client
+    attr_reader :client, :mcpversion
+
     def initialize(client)
       @client = client
+      @mcpversion = 1
     end
 
 
@@ -24,13 +26,16 @@ module DimensionData::API
     end
 
     def org_endpoint(e)
-      endpoint("/#{org_id}" + e)
+        endpoint("/#{org_id}" + e)
     end
 
     def query_params(q)
       @query_params = q
     end
 
+    def mcpversion(x)
+      @mcpversion = x
+    end
     def xml_params(x)
       @xml_params = x
     end
@@ -61,9 +66,9 @@ module DimensionData::API
     #if simple, post body is also simple...
     def perform(method, simple=false)
       if simple
-        request = @client.build_request(method, @endpoint, request_query_string, request_simple_body, false)
+        request = @client.build_request(method, @endpoint, @mcpversion, request_query_string, request_simple_body,  false)
       else
-        request = @client.build_request(method, @endpoint, request_query_string, request_xml_body)
+        request = @client.build_request(method, @endpoint, @mcpversion, request_query_string, request_xml_body)
       end
       response = @client.perform_request(request)
 
@@ -115,7 +120,7 @@ module DimensionData::API
       schema = @xml_params.delete(:schema)
       tag = @xml_params.delete(:tag)
 
-      body = @client.build_request_xml_body(schema, tag, @xml_params)
+      body = @client.build_request_xml_body(schema, tag, @xml_params, @mcp_version)
       log(body, :green)
       body
     end

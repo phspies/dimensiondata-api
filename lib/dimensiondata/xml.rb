@@ -22,9 +22,13 @@ module DimensionData
       body.join
     end
 
-    def build_request_xml_body(schema, tag, params)
+    def build_request_xml_body(schema, tag, params, mcp_ver)
       params = camelize_keys(params)
-      schema_url = "http://oec.api.opsource.net/schemas/#{schema}"
+      if mcp_ver == 1
+        schema_url = "http://oec.api.opsource.net/schemas/#{schema}"
+      elsif (mcp_ver == 2)
+        schema_url = 'xmlns="urn:didata.com:api:cloud:types"'
+      end
 
       xml = xml_header
       xml += "<#{tag} xmlns=\"#{schema_url}\">\n"
