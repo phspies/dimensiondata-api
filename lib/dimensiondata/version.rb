@@ -1,5 +1,5 @@
 module DimensionData
-  VERSION = "1.0.0"
+  VERSION = "2.0.0"
 
   {"xmlns:ns3"=>"http://oec.api.opsource.net/schemas/organization",
     "xmlns:ns4"=>"http://oec.api.opsource.net/schemas/network",

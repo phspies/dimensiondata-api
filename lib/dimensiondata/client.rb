@@ -19,7 +19,7 @@ module DimensionData
 
 
 
-    def initialize(api_base, username, password, datacenter="NA1", silent=false)
+    def initialize(api_base, username, password, datacenter="NA1", silent=true)
       Typhoeus::Config.verbose = false
       @api_base = api_base
       @username     = username
@@ -40,6 +40,12 @@ module DimensionData
 
     def network
       DimensionData::API::Network.new(self)
+    end
+    def network2
+      DimensionData::API::Network2.new(self)
+    end
+    def server2
+      DimensionData::API::Server2.new(self)
     end
 
     def server

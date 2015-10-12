@@ -1,6 +1,6 @@
 module DimensionData::API
   class Core
-    attr_reader :client, :mcpversion
+    attr_reader :client
 
     def initialize(client)
       @client = client

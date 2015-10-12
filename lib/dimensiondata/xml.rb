@@ -22,19 +22,30 @@ module DimensionData
       body.join
     end
 
-    def build_request_xml_body(schema, tag, params, mcp_ver)
+    def build_request_xml_body(schema, tag, params, mcpver)
       params = camelize_keys(params)
-      if mcp_ver == 1
+      if mcpver == 1
         schema_url = "http://oec.api.opsource.net/schemas/#{schema}"
-      elsif (mcp_ver == 2)
-        schema_url = 'xmlns="urn:didata.com:api:cloud:types"'
+      else
+        schema_url = "urn:didata.com:api:cloud:types"
       end
 
       xml = xml_header
       xml += "<#{tag} xmlns=\"#{schema_url}\">\n"
       params.each do |k, value|
         if (!value.nil?)
-          xml += build_xml_helper(k, value)
+          if (value.is_a?(Hash))
+            if (value[:attribute])
+              attribhash = value[:attribute]
+              value.delete(:attribute)
+              xml += build_xml_helper_attribute(k, value, attribhash.keys[0], attribhash.values[0])
+            else
+              xml += build_xml_helper(k, value)
+            end
+          else
+            xml += build_xml_helper(k, value)
+          end
+
           xml += "\n"
         end
 
@@ -52,6 +63,17 @@ module DimensionData
             result += "#{value}"
         end
         result += "</#{key}>"
+    end
+    def build_xml_helper_attribute(key, value, attribute, attribute_value)
+      result = "<#{key} #{attribute}='#{attribute_value}'>"
+      if value.is_a?(Hash)
+        value.each do |k, v|
+          result += build_xml_helper(k,v)
+        end
+      else
+        result += "#{value}"
+      end
+      result += "</#{key}>"
     end
 
   end
