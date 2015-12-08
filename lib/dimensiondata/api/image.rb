@@ -9,7 +9,7 @@ module DimensionData::API
       get
     end
     def template_labels_in_location(datacenter)
-      org_endpoint "/imageWithDiskSpeed?&location=#{datacenter}"
+      org_endpoint "/imageWithDiskSpeed?location=#{datacenter}"
       get
     end
     def show_by_name(name, options = {})
